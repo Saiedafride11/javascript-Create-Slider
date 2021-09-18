@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create-Slider</title>
+</head>
+<body>
+    <button onclick="prev()">Prev</button>
+    <img id="slider-img" src="images/nature-01.jpg" alt="" width="200" height="200">
+    <button onclick="next()">Next</button>
+
+
+    <script>
+        const images = [
+            "images/nature-01.jpg",
+            "images/nature-02.jpg",
+            "images/nature-03.jpg",
+            "images/nature-04.jpg",
+            "images/nature-05.jpg",
+            "images/nature-06.jpg",
+            "images/nature-07.jpg",
+            "images/nature-08.jpg",
+            "images/nature-09.jpg",
+        ];
+
+        let imgIndex = 0;
+        const imgElement = document.getElementById("slider-img");
+       
+        function next(){
+            imgIndex++;
+            if(imgIndex >= images.length){
+                imgIndex = 0;
+            }
+            const imgUrl = images[imgIndex];
+            // console.log(imgUrl);
+            imgElement.setAttribute('src', imgUrl);
+        }
+
+        function prev(){
+            imgIndex--;
+            if(imgIndex < 0){
+                imgIndex = images.length - 1;
+            }
+            const imgUrl = images[imgIndex];
+            // console.log(imgUrl);
+            imgElement.setAttribute('src', imgUrl);
+        }
+    </script>
+</body>
+</html>

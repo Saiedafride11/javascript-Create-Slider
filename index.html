@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create-Slider</title>
+</head>
+<body>
+    <img id="slider-img" src="" alt="">
+
+
+    <script>
+        const images = [
+            "images/nature-01.jpg",
+            "images/nature-02.jpg",
+            "images/nature-03.jpg",
+            "images/nature-04.jpg",
+            "images/nature-05.jpg",
+            "images/nature-06.jpg",
+            "images/nature-07.jpg",
+            "images/nature-08.jpg",
+            "images/nature-09.jpg",
+        ];
+
+        let imgIndex = 0;
+        const imgElement = document.getElementById("slider-img");
+        setInterval( () => {
+            if(imgIndex >= images.length){
+                imgIndex = 0;
+            }
+            const imgUrl = images[imgIndex];
+            // imgElement.setAttribute('src', imgUrl);
+            imgElement.src = imgUrl;
+            imgIndex++;
+        }, 1000)
+    </script>
+</body>
+</html>

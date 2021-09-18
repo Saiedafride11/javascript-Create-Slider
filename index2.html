@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="prev()">Previous</button>
+    <img src="images/nature-01.jpg" alt="" width="200" height="200">
+    <button onclick="next()">Next</button>
+
+    <script>
+        var photo = [
+            "images/nature-01.jpg",
+            "images/nature-02.jpg",
+            "images/nature-03.jpg",
+            "images/nature-04.jpg",
+            "images/nature-05.jpg",
+            "images/nature-06.jpg",
+            "images/nature-07.jpg",
+            "images/nature-08.jpg",
+            "images/nature-09.jpg",
+        ];
+        var imageTag = document.querySelector("img");
+
+        var count = 0;
+        function next() {
+            count++;
+            if(count >= photo.length){
+                count = 0;
+                imageTag.src = photo[count]
+            }
+            else{
+                imageTag.src = photo[count]
+            }
+        }
+
+        function prev() {
+            count--;
+            // console.log(count, photo.length-1);
+            if(count < 0){
+                count = photo.length - 1;
+                imageTag.src = photo[count]
+            }
+            else{
+                imageTag.src = photo[count]
+            }
+        }
+
+    
+    </script>
+</body>
+</html>
